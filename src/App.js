@@ -1,6 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+const marked = require('marked');
+
+marked.setOptions({
+  breaks: true
+});
 
 const placeholder = `# Welcome to my React Markdown Previewer!
 
@@ -52,21 +57,56 @@ And here. | Okay. | I think we get it.
 class App extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      markdown: placeholder,
+    };
 
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      markdown: e.target.value
+    });
   }
 
   render(){
     return (
-      <div class="markdown">
-        <div class="markdown-header text-center">
-          Markdown
+      <div className="container">
+        <div className="markdown">
+          <div className="markdown-header">
+            <p>Markdown</p>
+          </div>
+          <div className="markdown-body">
+            <textarea onChange={this.handleChange} id="editor" autofocus value={this.state.markdown}></textarea>
+          </div>
         </div>
-        <div class="markdown-body">
-          <textarea id="editor" autofocus></textarea>
-        </div>
+        <Preview markdown={this.state.markdown} />
       </div>
     );
   }
+}
+
+const Preview = (props) => {
+  return (
+    <div className="preview">
+      <div className="preview-header text-center">
+        <p>Preview</p>
+        <div className="buttons">
+          <button className="min">
+            <i className="fas fa-window-minimize fa-fw"></i>
+          </button>
+          <button className="max">
+            <i className="fas fa-window-maximize fa-fw"></i>
+            {/* <i className="fas fa-compress-arrows-alt fa-fw"></i> */}
+          </button>
+        </div>
+      </div>
+      <div id="preview" className="preview-body" dangerouslySetInnerHTML={{__html: marked(props.markdown)}}> 
+        
+      </div>
+    </div>
+  );
 }
 
 export default App;
