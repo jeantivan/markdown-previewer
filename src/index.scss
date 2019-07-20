@@ -9,28 +9,52 @@ body{
   padding: 0;
   font-size: 1rem;
   font-family: 'Nunito', sans-serif;
-  background-color: #CCC; 
 }
 
-button{
-  outline: 0;
-  border: 0;
-  vertical-align: middle;
-  background: black;
+h1, h2, h3{
+  margin-top: 0;
+}
+
+pre{
+  background-color: darken(#404664, 10%);
+  padding: 5px 0 5px 5px;
+}
+
+code{
   color: white;
-  border-radius: 50%;
-  padding: 4px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-button:focus{
-  outline: 0;
+  background-color: darken(#404664, 10%);
+  padding: 1px 4px 2px 4px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 textarea {
   margin: 0;
   overflow: auto;
   border: 0;
-  resize: vertical;
+  resize: none;
 }
+
+table{
+  border-collapse: collapse;
+}
+
+th{
+  color: white;
+  background-color: #43454E;
+}
+
+td,th {
+  border: 2px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+blockquote{
+  border-left: 3px solid #43454E;
+  padding: 1px 10px;
+  background-color: lighten(#404664, 30%);
+  font-style: italic;
+  color: white;
+}
+

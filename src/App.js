@@ -7,8 +7,8 @@ marked.setOptions({
   breaks: true
 });
 
-const placeholder = `# Welcome to my React Markdown Previewer!
-
+const placeholder = `
+# Welcome to my React Markdown Previewer!
 ## This is a sub-heading...
 ### And here's some other cool stuff:
   
@@ -72,7 +72,7 @@ class App extends React.Component{
 
   render(){
     return (
-      <div className="container">
+      <div>
         <div className="markdown">
           <div className="markdown-header">
             <p>Markdown</p>
@@ -90,20 +90,10 @@ class App extends React.Component{
 const Preview = (props) => {
   return (
     <div className="preview">
-      <div className="preview-header text-center">
+      <div className="preview-header">
         <p>Preview</p>
-        <div className="buttons">
-          <button className="min">
-            <i className="fas fa-window-minimize fa-fw"></i>
-          </button>
-          <button className="max">
-            <i className="fas fa-window-maximize fa-fw"></i>
-            {/* <i className="fas fa-compress-arrows-alt fa-fw"></i> */}
-          </button>
-        </div>
       </div>
       <div id="preview" className="preview-body" dangerouslySetInnerHTML={{__html: marked(props.markdown)}}> 
-        
       </div>
     </div>
   );
