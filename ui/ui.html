@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markdown Previewer - UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="ui.css">
+  <script src="https://kit.fontawesome.com/8123476d1a.js"></script>
+</head>
+<body>
+  <div class="root" id="root">
+    <div class="markdown">
+      <div class="markdown-header text-center">
+        Markdown
+      </div>
+      <div class="markdown-body">
+        <textarea id="editor" autofocus></textarea>
+      </div>
+    </div>
+    <div class="preview" style="bottom: 0;">
+      <div class="preview-header text-center">
+        Preview
+        <div class="buttons">
+          <button class="min">
+            <i class="fas fa-window-minimize fa-fw"></i>
+          </button>
+          <button class="max">
+            <i class="fas fa-window-maximize fa-fw"></i>
+            <!--<i class="fas fa-compress-arrows-alt fa-fw"></i>-->
+          </button>
+        </div>
+      </div>
+      <div id="preview" > 
+        
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript" async defer></script>
+  <script>
+    $(document).ready( () => {
+
+    });
+  </script>
+</body>
+</html>
