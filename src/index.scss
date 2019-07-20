@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+*, *:before,*:after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  background-color: #CCC; 
+}
+
+button{
+  outline: 0;
+  border: 0;
+  vertical-align: middle;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:focus{
+  outline: 0;
+}
+
+textarea {
+  margin: 0;
+  overflow: auto;
+  border: 0;
+  resize: vertical;
+}
