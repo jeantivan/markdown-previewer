@@ -1,7 +1,7 @@
 $darkBlue: #404664;
-$grey: #CDCDCD;
+$grey: #cdcdcd;
 
-.preview{
+.preview {
   width: 50%;
   height: 100vh;
   position: fixed;
@@ -10,23 +10,41 @@ $grey: #CDCDCD;
   display: grid;
   grid-template-rows: 2.5rem auto;
 
-  .preview-header{
+  .preview-header {
     width: 100%;
     grid-row: 1;
-    background-color: $grey; 
-    position: relative;
+    background-color: $grey;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
 
-    p{
+    p {
       margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin-left: auto;
+      display: inline-flex;
+    }
+    a {
+      width: 40px;
+      height: 40px;
+      text-decoration: none;
+      color: #2c3045;
+      padding: 8px;
+      margin-top: -3px;
+      margin-left: auto;
+      transition: color 0.3s ease-in;
+      &:hover {
+        color: white;
+      }
+
+      & span > svg {
+        fill: currentColor;
+      }
     }
   }
-  
-  .preview-body{
+
+  .preview-body {
     overflow: scroll;
     overflow-x: auto;
     grid-row: 2;
@@ -45,15 +63,15 @@ $grey: #CDCDCD;
   display: grid;
   grid-template-rows: 2.5rem auto;
 
-  .markdown-header{
-    grid-row:1;
+  .markdown-header {
+    grid-row: 1;
     width: 100%;
     background-color: $darkBlue;
     color: lighten($darkBlue, 50%);
     position: relative;
     text-transform: uppercase;
 
-    p{
+    p {
       margin: 0;
       position: absolute;
       top: 50%;
@@ -62,10 +80,10 @@ $grey: #CDCDCD;
     }
   }
 
-  .markdown-body{
+  .markdown-body {
     grid-row: 2;
     width: auto;
-    textarea{
+    textarea {
       height: 100%;
       width: 100%;
       background-color: transparent;
@@ -77,11 +95,15 @@ $grey: #CDCDCD;
 }
 
 @media screen and (max-width: 758px) {
-  .markdown, .preview{
-    width: 90%;
+  .markdown,
+  .preview {
+    width: calc(100vw - 0.5rem);
     position: static;
     float: none;
-    margin: 30px auto;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
     border-radius: 8px;
     -moz-box-shadow: 6px 10px 6px darken($grey, 8%);
     -webkit-box-shadow: 6px 10px 6px darken($grey, 8%);
